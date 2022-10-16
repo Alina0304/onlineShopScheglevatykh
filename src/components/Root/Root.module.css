@@ -1,0 +1,15 @@
+main {
+    display: block
+}
+.products {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.products__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 1px);
+    border-top: 1px solid #2e2e2e;
+    margin-right: -1px
+}

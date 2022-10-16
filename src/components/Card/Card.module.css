@@ -1,0 +1,33 @@
+.item {
+    width: 25%;
+    position: relative;
+    border: 0 solid #2e2e2e;
+    border-width: 0 1px 1px 0
+}
+.img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+@media (max-width: 1024px) {
+    .img {
+        height: auto
+    }
+}
+
+.expected {
+    position: absolute;
+    top: 11px;
+    left: 19px;
+    font-size: .9rem;
+    text-transform: uppercase;
+    letter-spacing: normal
+}
+
+@media (max-width: 1024px) {
+    .expected {
+        top: 13px;
+        left: 13px
+    }
+}
