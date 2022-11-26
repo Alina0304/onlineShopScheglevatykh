@@ -1,4 +1,5 @@
 export interface LabelProps {
+    id: number,
     name: string,
     price: string,
     coming_soon: boolean,

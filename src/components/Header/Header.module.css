@@ -64,7 +64,8 @@ input::placeholder {
     cursor: pointer;
 }
 .search_list {
-    display: flex;
+    /*поправить*/
+    display: none;
     flex-direction: column;
     position: absolute;
     z-index: 15;

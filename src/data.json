@@ -1,4 +1,5 @@
 [{
+	"id": 0,
 	"name": "La robe Draggiu",
 	"price": "1950 EUR",
 	"coming_soon": true,
@@ -7,6 +8,7 @@
 	"colors": [],
 	"sold": true
 }, {
+	"id": 1,
 	"name": "La veste Baccala",
 	"price": "840 EUR",
 	"coming_soon": false,
@@ -15,6 +17,7 @@
 	"colors": ["#ffffff", "#b3a25f", "#000000"],
 	"sold": false
 }, {
+	"id": 2,
 	"name": "La jupe Notte",
 	"price": "515 EUR",
 	"coming_soon": false,
@@ -23,6 +26,7 @@
 	"colors": ["#ffffff", "#000000", "#ff70f8"],
 	"sold": false
 }, {
+	"id": 3,
 	"name": "La jupe Baccala",
 	"price": "485 EUR",
 	"coming_soon": true,
@@ -31,6 +35,7 @@
 	"colors": ["#ffffff", "#000000"],
 	"sold": true
 }, {
+	"id": 4,
 	"name": "Le manteau Filu",
 	"price": "785 EUR",
 	"coming_soon": false,
@@ -39,6 +44,7 @@
 	"colors": ["#e6d6a8", "#5b3c11", "#ffffff"],
 	"sold": false
 }, {
+	"id": 5,
 	"name": "Le pantalon Camargue",
 	"price": "575 EUR",
 	"coming_soon": false,
@@ -47,6 +53,7 @@
 	"colors": ["#e6d6a8", "#5b3c11", "#ffffff", "#000000", "#ff70f8"],
 	"sold": false
 }, {
+	"id": 6,
 	"name": "Le Chiquito moyen",
 	"price": "575 EUR",
 	"coming_soon": false,
@@ -55,6 +62,7 @@
 	"colors": ["#e6d6a8", "#b07ffa", "ffffff", "000000", "#ba7730", "#edb2dd", "#d6a94f", "000000", "ffffff", "#f7ff00", "#c9ebf5", "#9cc7e6", "000000", "#ff70f8"],
 	"sold": false
 }, {
+	"id": 7,
 	"name": "La robe Biasi",
 	"price": "825 EUR",
 	"coming_soon": true,

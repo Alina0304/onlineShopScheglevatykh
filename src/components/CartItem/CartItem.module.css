@@ -1,0 +1,25 @@
+.thin {
+    font-weight:400;
+}
+.small {
+    font-size:12px;
+    font-size:.8rem;
+}
+.full_width {
+    width:100%;
+}
+.delete{
+    text-align: center;
+    color:black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.delete :hover{
+    /*background-color: #a19d9d;*/
+    transform: scale(1.2);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}

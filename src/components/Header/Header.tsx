@@ -1,9 +1,21 @@
-import React, {useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './Header.module.css'
 import classNames from "classnames";
+import {connect} from 'react-redux'
+import { Link } from 'react-router-dom';
 let cache = ""
 let cache2 = JSON.parse(localStorage.getItem("cache2") || '[]') || []
-export const Header = ()=> {
+// @ts-ignore
+const Header = ({cart})=> {
+    const [cartCount, setCartCount] = useState(0)
+    useEffect(()=>{
+        let count = 0
+        // @ts-ignore
+        cart.forEach(item=>{
+            count+=item.qty
+        })
+        setCartCount(count)
+    }, [cart, cartCount])
     let search: HTMLInputElement, list: any
     useEffect(()=>{
         search = document.getElementById('search_input') as HTMLInputElement
@@ -36,7 +48,7 @@ export const Header = ()=> {
             }
     }
     useEffect(()=>{
-        list.style.display = 'none'
+        // list.style.display = 'none'
     })
     const handlerChange=(event: any)=> {
         cache=event.target.value
@@ -93,11 +105,12 @@ export const Header = ()=> {
                     </div>
                     <nav className="nav">
                         <ul className={styles.nav__wrapper}>
-                            <li className={styles.nav__item}><a href="#">Home</a></li>
+                            <li className={styles.nav__item}><Link to='/'>Home</Link></li>
                             <li className={styles.nav__item}><a href="#">About</a></li>
                             <li className={styles.nav__item}><a href="#">Services</a></li>
                             <li className={styles.nav__item}><a href="#">Hire us</a></li>
-                            <li className={styles.nav__item}><a href="#">Contact</a></li>
+                            <li className={styles.nav__item}><Link to='/contact'>Contact</Link></li>
+                            <li className={styles.nav__item}><Link to='/cart'><div><svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M7 22q-.825 0-1.412-.587Q5 20.825 5 20q0-.825.588-1.413Q6.175 18 7 18t1.412.587Q9 19.175 9 20q0 .825-.588 1.413Q7.825 22 7 22Zm10 0q-.825 0-1.412-.587Q15 20.825 15 20q0-.825.588-1.413Q16.175 18 17 18t1.413.587Q19 19.175 19 20q0 .825-.587 1.413Q17.825 22 17 22ZM6.15 6l2.4 5h7l2.75-5ZM5.2 4h14.75q.575 0 .875.512.3.513.025 1.038l-3.55 6.4q-.275.5-.738.775Q16.1 13 15.55 13H8.1L7 15h12v2H7q-1.125 0-1.7-.988-.575-.987-.05-1.962L6.6 11.6 3 4H1V2h3.25Zm3.35 7h7Z"/></svg>{cartCount}</div></Link></li>
                         </ul>
                     </nav>
                 </div>
@@ -105,3 +118,13 @@ export const Header = ()=> {
             </>
     )
 }
+
+// @ts-ignore
+const mapStateToProps = state =>{
+    return{
+        cart: state.shop.cart
+    }
+
+}
+
+export default connect(mapStateToProps)(Header)
