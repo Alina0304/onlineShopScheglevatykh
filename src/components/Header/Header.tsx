@@ -3,6 +3,7 @@ import styles from './Header.module.css'
 import classNames from "classnames";
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom';
+import Categories from '../Categories/Categories';
 let cache = ""
 let cache2 = JSON.parse(localStorage.getItem("cache2") || '[]') || []
 // @ts-ignore
@@ -10,8 +11,7 @@ const Header = ({cart})=> {
     const [cartCount, setCartCount] = useState(0)
     useEffect(()=>{
         let count = 0
-        // @ts-ignore
-        cart.forEach(item=>{
+        cart?.forEach((item: { qty: number; })=>{
             count+=item.qty
         })
         setCartCount(count)
@@ -94,6 +94,7 @@ const Header = ({cart})=> {
             <header className={styles.site__header}>
                 <div className={styles.header__wrapper}>
                     <a href="#" className={styles.brand}>JV Brand</a>
+                    <Categories/>
                     <div className={styles.search} id='#search'>
                         <input autoComplete="off" type="text" placeholder="Искать здесь..." className={styles.search_input} id='search_input' onFocus={onFocusHandler} onChange={(event)=>handlerChange(event)}/>
                         <div className={styles.search_list} id='search_list'>
@@ -121,7 +122,8 @@ const Header = ({cart})=> {
 
 // @ts-ignore
 const mapStateToProps = state =>{
-    return{
+    console.log('state1', state)
+    return {
         cart: state.shop.cart
     }
 

@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 
 // @ts-ignore
 const Cart: React.FC = ({cart}) => {
+    console.log('cart', cart)
     const [totalPrice, setTotalPrice]=useState(0)
     const [totalItems, setTotalItems]=useState(0)
 
@@ -17,6 +18,9 @@ const Cart: React.FC = ({cart}) => {
 
         // @ts-ignore
         cart.forEach(item=>{
+            console.log('item5', item)
+            console.log('items', items)
+            console.log('price', price)
             items +=item.qty
             price+=item.qty*item.price
         })
